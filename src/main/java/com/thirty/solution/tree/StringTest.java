@@ -9,9 +9,9 @@ package com.thirty.solution.tree;
 public class StringTest {
 
     public static void main(String[] args) {
-        boolean check = com.algo.it.thirty.algo.StringTest.check("aleex", "aalex");
+        boolean check = StringTest.check("aleex", "aalex");
 
-        boolean longPressedName = com.algo.it.thirty.algo.StringTest.isLongPressedName("alex", "blex");
+        boolean longPressedName = StringTest.isLongPressedName("alex", "blex");
         System.out.println(check);
 
         System.out.println(longPressedName);

@@ -8,17 +8,17 @@ package com.thirty.solution.base;
  */
 public class ListNode {
     public int val;
-    public com.algo.it.thirty.base.ListNode next;
+    public ListNode next;
     public ListNode(int x) {
         val = x;
         next = null;
     }
 
     public ListNode(int[] nums) {
-        com.algo.it.thirty.base.ListNode target = new com.algo.it.thirty.base.ListNode(nums[0]);
-        com.algo.it.thirty.base.ListNode head = target;
+        ListNode target = new ListNode(nums[0]);
+        ListNode head = target;
         for (int i = 1; i < nums.length; i++) {
-            target.next = new com.algo.it.thirty.base.ListNode(nums[i]);
+            target.next = new ListNode(nums[i]);
             target = target.next;
         }
         this.val = head.val;
@@ -27,7 +27,7 @@ public class ListNode {
 
     //打印链表结构
     public void printList() {
-        com.algo.it.thirty.base.ListNode printhead = this;
+        ListNode printhead = this;
         while (printhead != null) {
             System.out.print(printhead.val + "->");
             printhead = printhead.next;

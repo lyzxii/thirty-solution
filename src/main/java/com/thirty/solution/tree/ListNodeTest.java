@@ -1,6 +1,7 @@
 package com.thirty.solution.tree;
 
-import com.algo.it.thirty.base.ListNode;
+
+import com.thirty.solution.base.ListNode;
 
 /**
  * @author ：yanpeidong371

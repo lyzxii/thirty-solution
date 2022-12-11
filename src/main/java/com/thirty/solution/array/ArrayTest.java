@@ -1,19 +1,16 @@
-/*
-package com.thirty.solution.tree;
+package com.thirty.solution.array;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 
-*/
 /**
  * @author ：yanpeidong371
  * @description：
  * @date : 2022年11月11日
  * @since: 1.0.0
- *//*
-
+ */
 public class ArrayTest {
 
 
@@ -36,16 +33,14 @@ public class ArrayTest {
         return min;
     }
 
-    */
-/**
+    /**
      * ## 两数之和 ##
      * 给定一个整数数组 nums 和一个整数目标值 target,
      * 请你在该数组中找出和为目标值 target的那两个整数,并返回它们的数组下标。
      * 输入：nums = [2,7,11,15], target = 9
      * 输出：[0,1]
      * 解释：因为 nums[0] + nums[1] == 9 ,返回 [0, 1]
-     *//*
-
+     */
     public int[] twoSum(int[] nums, int target) {
 
         for (int i = 0; i < nums.length; i++) {
@@ -70,11 +65,9 @@ public class ArrayTest {
         return null;
     }
 
-    */
-/**
+    /**
      * 最大子数组
-     *//*
-
+     */
     public int maxSubArray(int[] arr) {
         int[] result = new int[arr.length];
         result[0] = arr[0];
@@ -87,11 +80,9 @@ public class ArrayTest {
         return temp;
     }
 
-    */
-/**
+    /**
      * 最大子数组优化版
-     *//*
-
+     */
     public int maxSubArray02(int[] arr) {
         int temp = arr[0];
         int result = arr[0];
@@ -102,15 +93,13 @@ public class ArrayTest {
         return result;
     }
 
-    */
-/**
+    /**
      * 爬楼梯,每次可以趴1层或者2层,有多少种趴法
      * f(n) = f(n-1) +f(n-2)
      *
      * @param n
      * @return
-     *//*
-
+     */
     public int climb(int n) {
         if (n == 0 | n == 1) {
             return 1;
@@ -126,14 +115,12 @@ public class ArrayTest {
         return result;
     }
 
-    */
-/**
+    /**
      * 找出数组中唯一一个出现一次的元素
      *
      * @param arr
      * @return
-     *//*
-
+     */
     public int findOnlyOne(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap();
         for (int i = 0; i < arr.length; i++) {
@@ -151,14 +138,12 @@ public class ArrayTest {
         return 0;
     }
 
-    */
-/**
+    /**
      * 在长度为n的nums数组中,所有数字都是在0-n-1范围内,找出重复的数字,任意返回一个重复的即可
      *
      * @param arr
      * @return
-     *//*
-
+     */
     public static int findRepeatNumber(int[] arr) {
         HashSet<Integer> set = new HashSet<>(arr.length);
         for (int i = 0; i < arr.length; i++) {
@@ -181,13 +166,11 @@ public class ArrayTest {
         return -1;
     }
 
-    */
-/**
+    /**
      * 统计有序数组中某个值出现的次数,比如数组1,2,3,6,6,7,9taget=6,返回2
      *
      * @return
-     *//*
-
+     */
     public static int numCount(int[] arr, int target) {
         HashMap<Integer, Integer> hashMap = new HashMap();
         for (int i = 0; i < arr.length; i++) {
@@ -200,11 +183,9 @@ public class ArrayTest {
         return hashMap.get(target);
     }
 
-    */
-/**
+    /**
      * 用二分查找,数组1,2,3,6,6,7,9；返回taget和taget+1的下标的差
-     *//*
-
+     */
     public static int numCount02(int[] arr, int target) {
         int i = binSearch(arr, target);
         int j = binSearch(arr, target + 1);
@@ -230,12 +211,10 @@ public class ArrayTest {
     }
 
 
-    */
-/**
+    /**
      * 找出数组中0-n-1的数组中不存在的元素,比如数组[0,1,2,3,4,6],返回5
      * 用二分查找也可以
-     *//*
-
+     */
     public static int arrShort(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] + 1 != arr[i + 1]) {
@@ -245,11 +224,9 @@ public class ArrayTest {
         return -1;
     }
 
-    */
-/**
+    /**
      * 用二分查找也可以
-     *//*
-
+     */
     public static int arrShort02(int[] arr) {
         return shortSearch(arr);
     }
@@ -269,14 +246,12 @@ public class ArrayTest {
     }
 
 
-    */
-/**
+    /**
      * 有序递增数组旋转,比如1,2,3,4,5,旋转后4,5,1,2,3,找出最小值
      * 采用二分查找法
      * 4,5,1,2,3, mid > right,则 left = mid +1
      * 5,1,2,3,4, mid < right,则 right = mid-1
-     *//*
-
+     */
     public static int findTransferArr(int[] arr) {
         int left = 0;
         int right = arr.length - 1;
@@ -293,14 +268,12 @@ public class ArrayTest {
         return arr[left];
     }
 
-    */
-/**
+    /**
      * N个正整数的数组,和正整数target,找出连续的子数组且和大于等于target,返回子数组的长度
      * 如数组2,3,1,2,4,3;target=7,则返回2
      * <p>
      * 使用滑动窗口
-     *//*
-
+     */
     public static int findMinSubArr(int[] arr, int target) {
         int left = 0, right = -1;
         int sum = 0;
@@ -323,12 +296,10 @@ public class ArrayTest {
         return res;
     }
 
-    */
-/**
+    /**
      * 滑动窗口
      * 返回一个字符串中，不含重复元素的最大字串的长度
-     *//*
-
+     */
     public static int findMaxNotRepeat(String str){
         String[] strArr = str.split("");
         int left=0;
@@ -345,15 +316,13 @@ public class ArrayTest {
 
     }
 
-    */
-/**
+    /**
      * 将数组中的所有0元素移到数组尾部
      * 思路：定义前面的都是不为0，后面的都是0，如果不为0，则移到前端，k表示不为0的数组，i遍历数组
      *
      * @param arr
      * @return
-     *//*
-
+     */
     public static int[] moveZero(int[] arr) {
         int k = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -370,11 +339,9 @@ public class ArrayTest {
     }
 
 
-    */
-/**
+    /**
      * 删除数组中target的元素,返回数组的长度，且不适用额外的空间
-     *//*
-
+     */
     public static int deleteTarget(int[] arr, int target) {
         int len = arr.length;
         for (int i = 0; i < len;) {
@@ -388,11 +355,9 @@ public class ArrayTest {
         return len;
     }
 
-    */
-/**
+    /**
      * 有序数组去重，返回去重后的数组的长度，使用双指针
-     *//*
-
+     */
     public static int deleteRepeat(int[] arr) {
         int left=0;
         for(int right=1; right < arr.length;){
@@ -406,11 +371,9 @@ public class ArrayTest {
     }
 
 
-    */
-/**
+    /**
      * 有序数组去重，同一个值最多保留1个重复元素，返回去重后的数组的长度
-     *//*
-
+     */
     public static int keepTwoMore(int[] arr) {
         int left =2;
         for(int right=2; right < arr.length;){
@@ -423,12 +386,10 @@ public class ArrayTest {
         return left;
     }
 
-    */
-/**
+    /**
      * 合并2个数组，其中m表示数组中nums有效元素个数（num数组的尾部是n个0），n表示arr数组长度
 
-     *//*
-
+     */
     public static int[] mergeArray(int[] nums,int m, int[] arr, int n) {
         int i = m -1;
         int j = n -1;
@@ -455,21 +416,17 @@ public class ArrayTest {
         return nums;
     }
 
-    */
-/**
+    /**
      * 返回数组第k大的元素
-     *//*
-
+     */
     public static int noMax(int[] nums,int k) {
         return 0;
     }
 
-    */
-/**
+    /**
      * 对撞指针
      * 有序数组，查找二数之和等于target的数组的下标
-     *//*
-
+     */
     public static int[] twoSumI(int[] nums, int target){
         int left=0;
         int right =nums.length;
@@ -486,11 +443,9 @@ public class ArrayTest {
         return null;
     }
 
-    */
-/**
+    /**
      * 字符串反转，指针碰撞
-     *//*
-
+     */
     public static String transferStr(String str){
         int left =0;
         int right=str.length() -1;
@@ -508,7 +463,7 @@ public class ArrayTest {
 
 
     public static void main(String[] args) {
-        com.algo.it.thirty.algo.ArrayTest arrayTest = new com.algo.it.thirty.algo.ArrayTest();
+        ArrayTest arrayTest = new ArrayTest();
         int[] ints = {2, 7, 11, 15};
         int[] result = arrayTest.twoSumInHashMap(ints, 18);
         System.out.println(Arrays.toString(result));
@@ -555,7 +510,7 @@ public class ArrayTest {
 
         int[] nums = {1, 2, 3, 0, 0, 0};
         int[] arr = {2, 5, 6};
-        System.out.println(Arrays.toString(com.algo.it.thirty.algo.ArrayTest.mergeArray(nums,3,arr,3)));
+        System.out.println(Arrays.toString(ArrayTest.mergeArray(nums,3,arr,3)));
         System.out.println(transferStr("caonima"));
 
 
@@ -564,4 +519,3 @@ public class ArrayTest {
     }
 
 }
-*/

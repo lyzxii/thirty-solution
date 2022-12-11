@@ -1,15 +1,17 @@
+/*
 package com.thirty.solution.tree;
 
 import java.util.*;
 
-/**
+*
  *
  *
  * @date : 2021年12月11日
  *       6
  *
  *
- */
+
+
 public class TreeNodeSolution {
 
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class TreeNodeSolution {
     }
 
 
-    /**
+*
      *       A
      *      / \
      *     B   C
@@ -28,15 +30,17 @@ public class TreeNodeSolution {
      *
      *  主要遍历方式：1. 递归。所有二叉树都可以使用递归去做，递归需要有终止条件
      *              2. 利用栈的数据结构进行遍历
-     */
 
 
 
-    /**
+
+
+*
      * 递归
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
-     */
+
+
     public static List<Integer> recTree(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         preOrder(root, res); //前序遍历
@@ -50,11 +54,13 @@ public class TreeNodeSolution {
         preOrder(root.right, res);//右
     }
 
-    /******************************************************************************************************************/
+****************************************************************************************************************
 
-    /**
+
+*
      * 前序遍历 非递归
-     */
+
+
     public static void preOrderTree(TreeNode root) {
         List<Integer> res = new ArrayList();
         Stack<TreeNode> stack = new Stack<>();
@@ -94,13 +100,14 @@ public class TreeNodeSolution {
     }
 
 
-    /**
+*
      *
      * 栈 先进后出
      * 前序遍历，出栈顺序：根左右; 入栈顺序：右左根
      * 中序遍历，出栈顺序：左根右; 入栈顺序：右根左
      * 后序遍历，出栈顺序：左右根; 入栈顺序：根右左
-     */
+
+
     public static List<Integer> midOrderTree(TreeNode root){
         List<Integer> res = new ArrayList();
         Stack<TreeNode> stack = new Stack<>();
@@ -119,9 +126,10 @@ public class TreeNodeSolution {
         return res;
     }
 
-    /**
+*
      * 先序遍历
-     */
+
+
     public static void postSort(TreeNode root){
 
 
@@ -129,3 +137,4 @@ public class TreeNodeSolution {
 
 
 }
+*/
