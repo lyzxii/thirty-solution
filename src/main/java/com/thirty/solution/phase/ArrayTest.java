@@ -1,4 +1,4 @@
-package com.thirty.solution.array;
+package com.thirty.solution.phase;
 
 import java.util.Arrays;
 import java.util.HashMap;

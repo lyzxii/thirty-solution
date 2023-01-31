@@ -1,4 +1,4 @@
-package com.thirty.solution.array;
+package com.thirty.solution.phase;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -18,8 +18,6 @@ public class PrimaryArray {
      *
      *
      * * */
-
-
     /**
      * @Leetcode 两数之和
      * 给定一个整数数组 nums 和一个整数目标值 target，
@@ -130,7 +128,7 @@ public class PrimaryArray {
      * 给一个下标从 1 开始的整数数组 numbers ，该数组已按非递减顺序排列  ，
      * 从数组中找出满足相加之和等于目标数 target 的两个数。如果设这两个数分别是 numbers[index1] 和 numbers[index2] ，则 1 <= index1 < index2 <= numbers.length 。
      * 必须只使用常量级的额外空间。
-     *
+     * <p>
      * 有序数组使用双指针
      */
 
@@ -151,9 +149,82 @@ public class PrimaryArray {
     }
 
 
+    /**
+     * @Leetcode 344  反转数组：[1,2,3] => [3,2,1]
+     */
+
+    public static char[] reverse(char[] chars) {
+        int left = 0, right = chars.length - 1;
+        while (left < right) {
+            char temp = chars[left];
+            chars[left] = chars[right];
+            chars[right] = temp;
+            right--;
+            left++;
+        }
+        return chars;
+    }
+
+
+    /**
+     * 判断是否是回文串，回文串就是正着读和反着读都一样的字符串。
+     */
+    public static boolean isPalindrome(String str) {
+        char[] chars = str.toCharArray();
+        int left = 0, right = chars.length - 1;
+        while (left < right) {
+            if (chars[left] == chars[right]) {
+                right--;
+                left++;
+            } else {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * @LeetCode 5
+     * 从字符串中找出最长的回文字串，如abbac,最长回文字串是abba
+     */
+    public static String isSubPalindrome(String str) {
+        String res = "";
+        //思路：遍历字符串，找出left 和right 满足palindrome的字符串，取最长的
+        for (int i = 0; i < str.length(); i++) {
+            String palindrome1 = palindrome(str, i, i);
+            String palindrome2 = palindrome(str, i, i + 1);
+            res = res.length() > palindrome1.length() ? res : palindrome1;
+            res = res.length() > palindrome2.length() ? res : palindrome2;
+        }
+        return res;
+    }
+
+    /**
+     * @param left  左指针
+     * @param right 右指针
+     *              开始时，当左指针=右指针时候，寻找奇数个数的回文串
+     *              开始时，当左指针+1=右指针时候（相邻），寻找偶数个数的回文串
+     */
+
+    private static String palindrome(String str, int left, int right) {
+        while (left >= 0 && right < str.length() && str.charAt(left) == str.charAt(right)) {
+            left--;
+            right++;
+        }
+        return str.substring(left + 1, right);
+    }
+
+
+
+
+
     public static void main(String[] args) {
         int[] nums = new int[]{1, 3, 4, 5, 7};
         System.out.println(Arrays.toString(twoSum02(nums, 7)));
+        String str = "abcd";
+        char[] reverse = reverse(str.toCharArray());
+        System.out.println(Arrays.toString(reverse));
+        System.out.println(isSubPalindrome("abbd"));
 
     }
 }
